@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+        
+<table>
+    
+</table>
+
+        <script>
+            
+
+
+let pattern='';
+
+for(var number=0;number<=7;number++){
+    for(let counter =0;counter<=number;counter++){
+    pattern += "*";
+    }
+pattern+="\n";
+}
+console.log(pattern);
+
+
+
+function countBs(string1){
+    var letterCount=0;
+    for (let index = 0; index < string1.length; index++) {
+        if (string1[index]=="B"){
+            letterCount++;
+        }
+     
+    }
+    
+    return letterCount; 
+}
+ var msg=(countBs("HEY bUDYY BBBbb"));
+ console.log("the total is", msg);
+
+
+
+function countChar(str,letter){
+    charCount=0;
+    for (let ndx=0; ndx<str.length;ndx++){
+        if (str.charAt(ndx)==letter){
+            charCount++;
+        }
+    }
+    return charCount;
+}
+console.log(countChar("education is our weapon",'o'));
+
+function reverseArray(arr) {
+  var newArray = [];
+  for (var i = arr.length - 1; i >= 0; i--) {
+    newArray.push(arr[i]);
+  }
+  return newArray;
+}        
+
+console.log(reverseArray([4,5,4,2,1,8]))
+
+
+function reverseArrayInPlace(arr) {
+  for (var i = 0; i <= ((arr.length - 1))/2; i++) {
+      let array = arr[i];
+      arr[i] = arr[arr.length - 1 - i];
+      arr[arr.length - 1 - i] = array;
+  }
+  return arr;
+}
+console.log(reverseArrayInPlace(["kyla","jean","dumaguit","Moniño","student"]))
+
+var mountains = [
+            { Name: "Kilimanjaro", Height: 5895, Place: "Tanzania"},
+            { Name: "Everest", Height: 8848, Place: "Nepal"},
+            { Name: "Mayon", Height: 2463, Place: "Philippines" },
+            { Name: "Denali", Height: 6190, Place: "USA" },
+        ];
+
+        function generateTableHead(table, data) {
+            let thead = table.createTHead();
+            let row = thead.insertRow();
+            for (let key of data) {
+                let th = document.createElement("th");
+                let text = document.createTextNode(key);
+                th.appendChild(text);
+                row.appendChild(th);
+            }
+        }
+
+        function generateTable(table, data) {
+            for (let element of data) {
+                let row = table.insertRow();
+                for (key in element) {
+                    let cell = row.insertCell();
+                    let text = document.createTextNode(element[key]);
+                    cell.appendChild(text);
+                }
+            }
+        }
+        
+
+        let table = document.querySelector("table");
+        let data = Object.keys(mountains[0]);
+        generateTableHead(table, data);
+        generateTable(table, mountains);
+        </script>
+    </body>
+</html>
